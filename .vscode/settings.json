@@ -1,0 +1,19 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "[sql]": {
+      "editor.formatOnSave": false
+    },
+    "editor.rulers": [
+      { "column": 80, "color": "#7f7f7f2c" },
+      { "column": 120, "color": "#7f7f7f7a" }
+    ],
+    "files.associations": {
+      "*.vtl": "velocity",
+      ".prettierrc": "ini"
+    }
+  
+}

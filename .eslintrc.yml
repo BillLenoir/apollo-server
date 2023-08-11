@@ -1,0 +1,54 @@
+root: true
+
+overrides:
+  - files: ["**.ts"]
+    env:
+      node: true
+      jest: true
+      es2021: true
+    parser: "@typescript-eslint/parser"
+    plugins:
+      - "@typescript-eslint"
+    extends:
+      - eslint:recommended
+      - plugin:@typescript-eslint/recommended
+      # - plugin:@typescript-eslint/recommended-requiring-type-checking # slows stuff down
+      - plugin:prettier/recommended
+    parserOptions:
+      sourceType: module
+      tsconfigRootDir: . # VSCode runs eslint from the repo base dir - see https://github.com/typescript-eslint/typescript-eslint/issues/251
+      project:
+        - tsconfig.json
+    rules:
+      no-console: 0
+      linebreak-style: 0
+      camelcase: 0
+      # # the eslint resolution check is flawed
+      # # let the ts server tell us if something is missing instead
+      # import/no-unresolved: 0
+      # import/extensions: 0
+      "@typescript-eslint/naming-convention":
+        - error
+        - selector: default
+          format:
+            - camelCase
+          leadingUnderscore: allow
+          trailingUnderscore: allow
+        - selector:
+            - variable
+            - enumMember
+          format:
+            - camelCase
+            - UPPER_CASE
+          leadingUnderscore: allow
+          trailingUnderscore: allow
+        - selector: typeLike
+          format:
+            - PascalCase
+        - selector: property
+          format: null
+      "@typescript-eslint/no-misused-promises": 0
+      "prettier/prettier": warn
+
+ignorePatterns:
+  - "*.json"

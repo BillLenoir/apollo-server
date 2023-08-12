@@ -15,7 +15,9 @@
   "type": "module",
   "dependencies": {
     "@apollo/server": "^4.9.1",
-    "graphql": "^16.7.1"
+    "graphql": "^16.7.1",
+    "node-fetch": "^3.3.2",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.2.0",

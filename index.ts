@@ -1,22 +1,7 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 import { games } from './data/data.js';
-
-const typeDefs = `#graphql
-
-type Query {
-        games: [Game]
-    }
-
-    type Game {
-        id: String
-        title: String
-        yearpublished: String
-        thumbnail: String
-        publisher: String
-        description: String
-    }
-`;
+import { typeDefs } from './graphql/typedefs.js';
 
 const resolvers = {
   Query: {
